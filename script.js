@@ -30,41 +30,30 @@ function findMin(...nums) {
   return [...nums].reduce((min, num) => num < min ? num : min);
 }
 
-// numsArr = [1, 4, 12, -3];
 
-// let result = numsArr.reduce(function(min, num) {
-//   if (num < min) {
-//     return num;
-//   }
-//   return min;
-// })
-
-
-
-
-/*
-Write a function called mergeObjects that accepts two objects and returns a new 
+/*Write a function called mergeObjects that accepts two objects and returns a new 
 object which contains all the keys and values of the first object and second object.
 
-mergeObjects({a:1, b:2}, {c:3, d:4}) // {a:1, b:2, c:3, d:4}
-*/
+mergeObjects({a:1, b:2}, {c:3, d:4}) // {a:1, b:2, c:3, d:4}  */
 
 // ES2015 Version
+function mergeObjects(obj1, obj2) {
+  return { ...obj1, ...obj2 };
+}
 
 
-
-
-/*
-Write a function called doubleAndReturnArgs which accepts an array and a variable 
+/*Write a function called doubleAndReturnArgs which accepts an array and a variable 
 number of arguments. The function should return a new array with the original array 
 values and all of additional arguments doubled.
 
 doubleAndReturnArgs([1,2,3],4,4) // [1,2,3,8,8]
-doubleAndReturnArgs([2],10,4) // [2, 20, 8]
-*/
+doubleAndReturnArgs([2],10,4) // [2, 20, 8]  */
 
 // ES2015 Version
-
+function doubleAndReturnArgs(arr, ...args) {
+  const doubleArgs = [...args].map(val => val * 2);
+  return [...arr, ...doubleArgs];
+}
 
 
 
