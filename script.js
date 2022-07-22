@@ -3,36 +3,41 @@
  * In this exercise, you’ll refactor some ES5 code into ES2015.
  * ************************************************************/
 
-/*
-Given this function:
+/*Given this function:
 function filterOutOdds() {
   var nums = Array.prototype.slice.call(arguments);
   return nums.filter(function(num) {
     return num % 2 === 0
   });
 }
-Refactor it to use the rest operator & an arrow function:
-*/
+Refactor it to use the rest operator & an arrow function:*/
 
 // ES2015 Version
+const filterOutOdds = (...nums) => nums.filter(num => num % 2 ===0);
 
 
-
-
-/*
-Write a function called findMin that accepts a variable number of arguments and 
+/*Write a function called findMin that accepts a variable number of arguments and 
 returns the smallest argument.
 
 Make sure to do this using the rest and spread operator.
 
 findMin(1,4,12,-3) // -3
 findMin(1,-1) // -1
-findMin(3,1) // 1
-mergeObjects
-*/
+findMin(3,1) // 1  */
 
 // ES2015 Version
+function findMin(...nums) {
+  return [...nums].reduce((min, num) => num < min ? num : min);
+}
 
+// numsArr = [1, 4, 12, -3];
+
+// let result = numsArr.reduce(function(min, num) {
+//   if (num < min) {
+//     return num;
+//   }
+//   return min;
+// })
 
 
 
